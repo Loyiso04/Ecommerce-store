@@ -1,0 +1,14 @@
+.icon {
+    font-size: .9rem;
+    color: var(--light-black);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.icon:hover,
+.icon-active {
+    background: var(--secondary-clr);
+}

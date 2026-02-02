@@ -1,0 +1,55 @@
+.secondary-bg{
+    background: #f7ebab; 
+    padding-block: 2.2rem;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+
+.container {
+    max-width: 80%;
+    margin: auto;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+form{
+    gap: 3rem;
+}
+
+form h3{
+    font-size: 1.4rem
+}
+
+.input-container input {
+  flex: 1;                 
+  padding: 14px 16px;
+  border: none;            
+  outline: none;
+  font-size: 1rem;
+}
+
+
+#email{
+    border: none;
+    flex: 1;
+    font-size: 1rem;
+    padding-left: 1.1rem;
+}
+
+#email:focus{
+    outline: none;
+}
+
+.social-icons{
+    gap: 1.2rem;
+    justify-content: flex-end;
+}
+
+.media{
+    font-size: 1.3rem;
+    color: var(--light-black);
+}
