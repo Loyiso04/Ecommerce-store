@@ -7,8 +7,6 @@ import SecondaryBg from "./components/SecondaryBg/SecondaryBg";
 import Deals from "./components/Deals/Deals";
 import Newsletter from "./components/Newsletter/Newsletter";
 import Footer from "./components/Footer/Footer";
-import CartSection from "./components/CartSection/CartSection"
-import ProfileSection from "./components/ProfileSection/ProfileSection"
 import MenuSection from "./components/MenuSection/MenuSection"
 
 
@@ -24,10 +22,7 @@ function App() {
       <Deals/>
       <Newsletter/>
       <Footer/>
-      <CartSection/>
-      <ProfileSection/>
       <MenuSection/>
-      
     </>
   );
 }
