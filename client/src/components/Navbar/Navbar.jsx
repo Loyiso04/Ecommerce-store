@@ -1,43 +1,66 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import "../MenuSection/MenuSection.css";
+import MenuSection from "../MenuSection/MenuSection";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header>
-      <nav className="navbar flex container">
-        <a href="#" className="logo">
-          Vogue<span>Vortex</span>
-        </a>
+    <>
+      <header>
+        <nav className="navbar flex container">
 
-        <ul className="navlist flex">
-          {["Home", "Shop", "Page", "Blog", "Contact"].map((item) => (
-            <li key={item}>
-              <a
-                href="#"
-                className={`link ${item === "Home" ? "link-active" : ""}`}
-              >
-                {item}
-              </a>
-            </li>
-          ))}
+          <Link to="/" className="logo">
+            Vogue<span>Vortex</span>
+          </Link>
 
-          <li className="nav-icons flex">
-            <a href="#" className="icon">
+              <div className="nav-search-container">
+            <input
+              type="text"
+              placeholder="Search for products..."
+              className="nav-search-input"
+            />
+            <button className="nav-search-btn">
               <i className="fa-solid fa-magnifying-glass"></i>
-            </a>
-            <a href="#" className="icon">
-              <i className="fa-solid fa-user"></i>
-            </a>
-            <a href="#" className="icon icon-active">
-              <i className="fa-solid fa-shopping-bag"></i>
-            </a>
-          </li>
-        </ul>
+            </button>
+          </div>
 
-        <a href="#" className="hamburger">
-          <i className="fa-solid fa-bars"></i>
-        </a>
-      </nav>
-    </header>
+          <div className="nav-icons flex nav-desktop">
+
+            <Link to="/wishlist" className="icon">
+              <i className="fa-solid fa-heart"></i>
+            </Link>
+
+            <Link to="/login" className="icon">
+              <i className="fa-solid fa-user"></i>
+            </Link>
+
+            <Link to="/cart" className="icon icon-active">
+              <i className="fa-solid fa-shopping-bag"></i>
+            </Link>
+
+            <select className="language-selector">
+              <option value="en">EN</option>
+              <option value="es">ES</option>
+              <option value="fr">FR</option>
+            </select>
+
+          </div>
+
+          <button
+            className="hamburger"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <i className="fa-solid fa-bars"></i>
+          </button>
+
+        </nav>
+      </header>
+
+      <MenuSection isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+    </>
   );
 };
 

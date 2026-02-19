@@ -1,0 +1,207 @@
+/* == BLURRED OVERLAY == */
+.menu-overlay {
+ /*position: fixed;
+  inset: 0;
+  backdrop-filter: blur(5px); /* ⚡ blur effect *
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 998;
+  opacity: 0;
+  animation: fadeInOverlay 0.25s ease forwards;*/
+
+    position: fixed;
+  inset: 0;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 998;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+
+}
+
+.menu-overlay.fade-in {
+  opacity: 1;
+}
+
+.menu-overlay.fade-out {
+  opacity: 0;
+}
+
+@keyframes fadeInOverlay {
+  to {
+    opacity: 1;
+  }
+}
+
+/* == SLIDE IN MENU == */
+.menu-section {
+
+  position: fixed;
+  top: -100%;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.98);
+  padding: 3rem 1.8rem;
+  box-shadow: -3px 0 14px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: top 0.35s ease, opacity 0.35s ease;
+  z-index: 999;
+
+ /* position: fixed;
+  top: -100%;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.98);
+  padding: 3rem 1.8rem;
+  box-shadow: -3px 0 14px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: top 0.35s ease, opacity 0.35s ease;
+  z-index: 999;*/
+}
+
+.menu-section.open {
+  top: 0;
+  opacity: 1;
+}
+
+.menu-section.close {
+  top: -100%;
+  opacity: 0;
+}
+
+/* == CLOSE BUTTON == */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--light-black);
+  margin-bottom: 1.2rem;
+}
+
+.close-btn:hover{
+    background: none;
+  border: none;
+}
+
+
+
+/* == MAIN MENU LINKS == */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  font-family: "Jost", sans-serif;
+}
+
+.menu-list a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--light-black);
+  letter-spacing: 1px;
+}
+
+.menu-list a:hover {
+  color: var(--primary-clr);
+  transform: translateX(4px);
+}
+
+/* == SHOP SUBMENU == */
+.submenu-btn {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--light-black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.submenu-btn i {
+  font-size: 1rem;
+  transition: transform 0.25s ease;
+}
+
+/* rotate plus to x when open */
+.submenu-btn.open i {
+  transform: rotate(45deg);
+}
+
+.submenu {
+  list-style: none;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.submenu a {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: none;
+  color: var(--text-dark);
+}
+
+.submenu a:hover {
+  color: var(--primary-clr);
+}
+
+/*
+
+/* == MENU SLIDE ANIMATION == *
+.menu-section {
+  position: fixed;
+  top: -100%;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.98);
+  padding: 3rem 1.8rem;
+  box-shadow: -3px 0 14px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: top 0.35s ease, opacity 0.35s ease;
+  z-index: 999;
+}
+
+.menu-section.open {
+  top: 0;
+  opacity: 1;
+}
+
+/* new closing state: slide up & fade out *
+.menu-section.close {
+  top: -100%;
+  opacity: 0;
+}
+
+/* == OVERLAY == *
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 998;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.menu-overlay.fade-in {
+  opacity: 1;
+}
+
+.menu-overlay.fade-out {
+  opacity: 0;
+}
+
+*/
